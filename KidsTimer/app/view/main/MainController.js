@@ -1,21 +1,31 @@
 /**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
+ * Main Controller
  */
 Ext.define('KidsTimer.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    onStartTimer: function () {
+        var me = this,
+            timer = me.lookup('kt-timer');
+
+        me.getView().setActiveItem(timer);
+        timer.fireEvent('startTimer', timer);
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+    onStopTimer: function (view, message) {
+        var me = this,
+            done = me.lookup('kt-done');
+
+        done.fireEvent('message', done, message);
+        me.getView().setActiveItem(done);
+    },
+
+    onRetry: function () {
+        var me = this,
+            start = me.lookup('kt-start');
+
+        me.getView().setActiveItem(start);
     }
 });
