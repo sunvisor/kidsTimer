@@ -1,0 +1,37 @@
+# Sencha Development
+/.sencha/
+/KidsTimer/.sencha/
+/build/
+/ext
+/workspace.json
+.architect
+.project
+/app/.sencha/
+.sass-cache/
+bootstrap.json
+bootstrap.jsonp
+bootstrap.js
+bootstrap.css
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# JetBrain
+.idea
+
+# vim
+.*.swp
+
+*.tar.gz
+*.zip
+
+# Vagrant
+Vagrantfile
+.vagrant
+/vagrant/.bundle/

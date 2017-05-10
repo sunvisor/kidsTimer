@@ -5,3 +5,13 @@
 - Web アプリケーション
 - モバイルでの動作を想定
 
+## sencha
+
+```
+sencha -sdk <path-to-sdk> generate workspace .
+cd ext
+sencha generate app -modern KidsTimer ../KidsTimer
+```
+
+
+
