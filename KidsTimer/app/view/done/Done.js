@@ -26,8 +26,9 @@ Ext.define('KidsTimer.view.done.Done', {
 
     items: [{
         xtype: 'panel',
+        cls: 'kt-done',
         bind: {
-            html: '{message}'
+            html: '<div class="kt-done-message">{message}</div>'
         }
     }, {
         xtype: 'button',

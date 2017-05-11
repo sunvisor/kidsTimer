@@ -5,11 +5,12 @@ Ext.define('KidsTimer.view.timer.TimerController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.kt-timer',
 
-    onStartTimer: function () {
+    onStartTimer: function (view, t) {
         var me = this,
             vm = me.getViewModel();
 
         vm.clearTimer();
+        vm.set('limitTime', t);
         vm.set('moving', true);
         me.timer = Ext.Function.interval(function() {
             vm.countUp();

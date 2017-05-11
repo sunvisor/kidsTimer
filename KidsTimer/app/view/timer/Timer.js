@@ -50,7 +50,7 @@ Ext.define('KidsTimer.view.timer.Timer', {
     }, {
         xtype: 'button',
         docked: 'bottom',
-        ui: 'decline',
+        ui: 'alt',
         text: 'できた',
         handler: 'onDoneButton'
     }]

@@ -6,6 +6,9 @@ Ext.define('KidsTimer.view.start.StartController', {
     alias: 'controller.kt-start',
 
     onStartButton: function () {
-        this.fireViewEvent('startTimer');
+        var me = this,
+            field = me.lookup('targetTime');
+
+        me.fireViewEvent('startTimer', field.getValue());
     }
 });

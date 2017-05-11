@@ -6,12 +6,12 @@ Ext.define('KidsTimer.view.main.MainController', {
 
     alias: 'controller.main',
 
-    onStartTimer: function () {
+    onStartTimer: function (view, t) {
         var me = this,
             timer = me.lookup('kt-timer');
 
         me.getView().setActiveItem(timer);
-        timer.fireEvent('startTimer', timer);
+        timer.fireEvent('startTimer', timer, t);
     },
 
     onStopTimer: function (view, message) {

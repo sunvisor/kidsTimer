@@ -21,7 +21,6 @@ Ext.define('KidsTimer.view.main.Main', {
     layout: 'card',
 
     items: [{
-        layout: 'fit',
         xtype: 'kt-start',
         reference: 'kt-start',
         listeners: {
