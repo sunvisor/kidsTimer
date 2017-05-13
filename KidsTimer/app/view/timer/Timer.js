@@ -7,7 +7,7 @@ Ext.define('KidsTimer.view.timer.Timer', {
     requires: [
         'Ext.chart.PolarChart',
         'Ext.chart.series.Pie',
-        'Ext.layout.Fit',
+        'Ext.layout.VBox',
         'KidsTimer.view.timer.TimerController',
         'KidsTimer.view.timer.TimerModel'
     ],
@@ -21,7 +21,7 @@ Ext.define('KidsTimer.view.timer.Timer', {
     controller: 'kt-timer',
 
     listeners: {
-        startTimer: 'onStartTimer',
+        startTimer: 'onStartTimer'
     },
 
     layout  : {
