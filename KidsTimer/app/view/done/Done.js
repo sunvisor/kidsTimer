@@ -22,18 +22,32 @@ Ext.define('KidsTimer.view.done.Done', {
         message: 'onMessage'
     },
 
-    layout: 'fit',
+    layout  : {
+        type    : 'vbox',
+        align   : 'stretch'
+    },
+
+    padding: 16,
 
     items: [{
         xtype: 'panel',
+        flex: 1,
         cls: 'kt-done',
+        tpl: [
+            '<div class="kt-done-icon"><i class="fa {icon}"></i></div>',
+            '<div class="kt-done-message">{message}</div>'
+        ].join('\n'),
         bind: {
-            html: '<div class="kt-done-message">{message}</div>'
+            data: {
+                icon: '{icon}',
+                message: '{message}'
+            }
         }
     }, {
         xtype: 'button',
+        height: 100,
+        ui: 'confirm',
         text: 'もういちど',
-        docked: 'bottom',
         handler: 'onRetryButton'
     }]
 });

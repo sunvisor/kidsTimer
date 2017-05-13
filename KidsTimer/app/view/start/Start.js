@@ -24,11 +24,23 @@ Ext.define('KidsTimer.view.start.Start', {
         align   : 'stretch'
     },
 
+    padding: 16,
+
     items: [{
         xtype: 'panel',
-        html: 'きっずたいまー',
-        flex: 1
+        html: [
+            '<div class="kt-start">',
+            '<span class="kt-start-title">きっずたいまー</span>',
+            '</div>',
+            '<div class="kt-start kt-start-icon">',
+            '<i class="fa fa-clock-o"></i>',
+            '</div>'
+        ].join('\n'),
+        flex: 2
     }, {
+        label: 'もくひょうタイム',
+        labelAlign: 'top',
+        textAlign: 'center',
         xtype: 'selectfield',
         reference: 'targetTime',
         valueField: 'value',
@@ -36,11 +48,19 @@ Ext.define('KidsTimer.view.start.Start', {
         bind: {
             options: '{timeOptions}'
         },
+        defaultPhonePickerConfig: {
+            doneButton: 'えらぶ',
+            cancelButton: 'やめる'
+        },
         value: 300
     }, {
+        xtype: 'component',
+        flex: 1
+    }, {
         xtype: 'button',
+        height: 100,
         ui: 'alt',
-        text: 'すたーと',
+        text: 'スタート',
         handler: 'onStartButton'
     }]
 });

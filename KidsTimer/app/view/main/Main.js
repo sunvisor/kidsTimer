@@ -7,7 +7,6 @@ Ext.define('KidsTimer.view.main.Main', {
 
     requires: [
         'Ext.layout.Card',
-        'Ext.layout.Fit',
         'KidsTimer.view.done.Done',
         'KidsTimer.view.main.MainController',
         'KidsTimer.view.main.MainModel',
@@ -27,7 +26,6 @@ Ext.define('KidsTimer.view.main.Main', {
             startTimer: 'onStartTimer'
         }
     }, {
-        layout: 'fit',
         xtype: 'kt-timer',
         reference: 'kt-timer',
         listeners: {

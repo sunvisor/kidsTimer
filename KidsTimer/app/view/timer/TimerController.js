@@ -5,6 +5,12 @@ Ext.define('KidsTimer.view.timer.TimerController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.kt-timer',
 
+    requires: [
+        'Ext.util.DelayedTask'
+    ],
+
+    interval: 1000,
+
     onStartTimer: function (view, t) {
         var me = this,
             vm = me.getViewModel();
@@ -12,19 +18,23 @@ Ext.define('KidsTimer.view.timer.TimerController', {
         vm.clearTimer();
         vm.set('limitTime', t);
         vm.set('moving', true);
-        me.timer = Ext.Function.interval(function() {
+        me.task = Ext.create('Ext.util.DelayedTask', function() {
             vm.countUp();
             if (!vm.getRemain()) {
-                me.stopTimer('時間切れです');
+                me.stopTimer('時間切れです', 'fa-hourglass-o');
             }
-        }, 1000);
+            //noinspection JSCheckFunctionSignatures
+            me.task.delay(me.interval);
+        }, me);
+        //noinspection JSCheckFunctionSignatures
+        me.task.delay(me.interval);
     },
 
     onDoneButton: function () {
         var me = this,
             vm = me.getViewModel();
 
-        me.stopTimer('時間内にできました');
+        me.stopTimer('時間内にできました', 'fa-thumbs-o-up');
         vm.clearTimer();
     },
 
@@ -32,16 +42,16 @@ Ext.define('KidsTimer.view.timer.TimerController', {
         var me = this,
             vm = me.getViewModel();
 
-        me.stopTimer('あきらめました');
+        me.stopTimer('あきらめました', 'fa-thumbs-down');
         vm.clearTimer();
     },
 
-    stopTimer: function (message) {
+    stopTimer: function (message, icon) {
         var me = this,
             vm = me.getViewModel();
 
         vm.set('moving', false);
-        clearInterval(this.timer);
-        me.fireViewEvent('stopTimer', message);
+        me.task.cancel();
+        me.fireViewEvent('stopTimer', message, icon);
     }
 });

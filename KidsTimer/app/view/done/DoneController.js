@@ -11,9 +11,11 @@ Ext.define('KidsTimer.view.done.DoneController', {
         me.fireViewEvent('retry');
     },
 
-    onMessage: function (view, message) {
-        var me = this;
+    onMessage: function (view, message, icon) {
+        var me = this,
+            vm = me.getViewModel();
 
-        me.getViewModel().set('message', message);
+        vm.set('message', message);
+        vm.set('icon', icon);
     }
 });

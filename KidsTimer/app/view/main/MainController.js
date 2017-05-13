@@ -14,11 +14,11 @@ Ext.define('KidsTimer.view.main.MainController', {
         timer.fireEvent('startTimer', timer, t);
     },
 
-    onStopTimer: function (view, message) {
+    onStopTimer: function (view, message, icon) {
         var me = this,
             done = me.lookup('kt-done');
 
-        done.fireEvent('message', done, message);
+        done.fireEvent('message', done, message, icon);
         me.getView().setActiveItem(done);
     },
 

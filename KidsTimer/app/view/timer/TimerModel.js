@@ -14,6 +14,14 @@ Ext.define('KidsTimer.view.timer.TimerModel', {
     formulas: {
         remain: function(get) {
             return get('limitTime') - get('done');
+        },
+        remainTime: function (get) {
+            var s = get('limitTime') - get('done'),
+                t = new Date;
+
+            t.setTime(0);
+            t.setSeconds(s);
+            return Ext.Date.format(t, 'i:s');
         }
     },
 

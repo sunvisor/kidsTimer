@@ -6,6 +6,7 @@ Ext.define('KidsTimer.view.done.DoneModel', {
     alias: 'viewmodel.kt-done',
 
     data: {
-        message: ''
+        message: '',
+        icon: ''
     }
 });
