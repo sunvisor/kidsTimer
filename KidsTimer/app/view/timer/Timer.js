@@ -8,6 +8,7 @@ Ext.define('KidsTimer.view.timer.Timer', {
         'Ext.chart.PolarChart',
         'Ext.chart.series.Pie',
         'Ext.layout.VBox',
+        'Ext.chart.interactions.ItemHighlight',
         'KidsTimer.view.timer.TimerController',
         'KidsTimer.view.timer.TimerModel'
     ],

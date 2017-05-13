@@ -5,7 +5,7 @@ Ext.define('KidsTimer.view.done.Done', {
     extend: 'Ext.Container',
 
     requires: [
-        'Ext.layout.Fit',
+        'Ext.layout.VBox',
         'KidsTimer.view.done.DoneController',
         'KidsTimer.view.done.DoneModel'
     ],
