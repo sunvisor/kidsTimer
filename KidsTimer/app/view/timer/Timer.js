@@ -66,5 +66,20 @@ Ext.define('KidsTimer.view.timer.Timer', {
         text: 'できた',
         height: 100,
         handler: 'onDoneButton'
+    }, {
+        xtype: 'audio',
+        reference: 'quitSound',
+        hidden: true,
+        url: 'resources/stupid4.mp3'
+    }, {
+        xtype: 'audio',
+        reference: 'doneSound',
+        hidden: true,
+        url: 'resources/dondonpafupafu1.mp3'
+    }, {
+        xtype: 'audio',
+        reference: 'timeUpSound',
+        hidden: true,
+        url: 'resources/boyon1.mp3'
     }]
 });

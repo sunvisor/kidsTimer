@@ -9,6 +9,7 @@ Ext.define('KidsTimer.view.start.StartController', {
         var me = this,
             field = me.lookup('targetTime');
 
+        me.lookup('startSound').play();
         me.fireViewEvent('startTimer', field.getValue());
     }
 });

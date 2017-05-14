@@ -21,6 +21,7 @@ Ext.define('KidsTimer.view.timer.TimerController', {
         me.task = Ext.create('Ext.util.DelayedTask', function() {
             vm.countUp();
             if (!vm.getRemain()) {
+                me.lookup('timeUpSound').play();
                 me.stopTimer('時間切れです', 'fa-hourglass-o');
             }
             //noinspection JSCheckFunctionSignatures
@@ -34,6 +35,7 @@ Ext.define('KidsTimer.view.timer.TimerController', {
         var me = this,
             vm = me.getViewModel();
 
+        me.lookup('doneSound').play();
         me.stopTimer('時間内にできました', 'fa-thumbs-o-up');
         vm.clearTimer();
     },
@@ -42,6 +44,7 @@ Ext.define('KidsTimer.view.timer.TimerController', {
         var me = this,
             vm = me.getViewModel();
 
+        me.lookup('quitSound').play();
         me.stopTimer('あきらめました', 'fa-thumbs-down');
         vm.clearTimer();
     },

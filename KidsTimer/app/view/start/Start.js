@@ -62,5 +62,10 @@ Ext.define('KidsTimer.view.start.Start', {
         ui: 'alt',
         text: 'スタート',
         handler: 'onStartButton'
+    }, {
+        xtype: 'audio',
+        reference: 'startSound',
+        hidden: true,
+        url: 'resources/switch1.mp3'
     }]
 });
